@@ -10,6 +10,7 @@ const muscleSchema = new Schema(
             required: [true, "The photo is required"]
         }
     }
+    
 );
 
 const Muscle = model("Muscle", muscleSchema);
