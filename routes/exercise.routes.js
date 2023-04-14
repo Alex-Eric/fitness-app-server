@@ -21,8 +21,9 @@ router.get("/exercises/:exerciseId",(req,res,next)=>{
 
 //POST /api/exercises/create
 router.post("/exercises/create",(req,res,next)=>{
-  const {name} = req.body
-  Exercise.create({name})
+  console.log(req.body)
+  const {name,type} = req.body
+  Exercise.create({name,type})
   .then(()=>res.status(201).json("Created!"))
   .catch((error) => {
     console.log("error: ", error);
