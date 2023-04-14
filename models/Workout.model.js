@@ -9,6 +9,9 @@ const workoutSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "Exercise"
         }],
+        series:{
+            type: Number
+        },
         description:{
             type: String
         },
