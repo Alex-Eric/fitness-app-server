@@ -10,4 +10,12 @@ router.get("/exercises", (req, res, next) => {
   .catch(err=>console.log("Error: " , err))
 });
 
+// GET /api/exercises/:id
+router.get("/exercises",(req,res,next)=>{
+  const {id} = req.params
+  Exercise.findById(id)
+  .then(response=>res.json(response))
+  .catch(err=>console.log("Error: " , err))
+})
+
 module.exports = router;

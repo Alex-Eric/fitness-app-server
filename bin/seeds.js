@@ -90,7 +90,8 @@ const exercisesPromises = muscles.map((muscle) => {
     });
 });
 
-Promise.all(exercisesPromises).then((exercisesData) => {
+Promise.all(exercisesPromises)
+  .then(() => {
   const exercisesToBD = exercises.flat().map((element) => {
     return {
       name: element.name,
