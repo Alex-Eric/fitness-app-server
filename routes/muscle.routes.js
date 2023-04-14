@@ -8,6 +8,7 @@ router.get("/muscles",(req,res,next)=>{
     .then((response)=>{
         res.json(response)
     })
+    .catch(err=>console.log("Error: " , err))
 })
 
 module.exports = router;
