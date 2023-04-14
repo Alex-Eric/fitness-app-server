@@ -11,11 +11,28 @@ router.get("/exercises", (req, res, next) => {
 });
 
 // GET /api/exercises/:id
-router.get("/exercises",(req,res,next)=>{
-  const {id} = req.params
-  Exercise.findById(id)
+router.get("/exercises/:exerciseId",(req,res,next)=>{
+  const {exerciseId} = req.params
+  Exercise.findById(exerciseId)
   .then(response=>res.json(response))
   .catch(err=>console.log("Error: " , err))
 })
+
+
+//POST /api/exercises/create
+router.post("/exercises/create",(req,res,next)=>{
+  const {name} = req.body
+  Exercise.create({name})
+  .then(()=>res.status(201).json("Created!"))
+  .catch((error) => {
+    console.log("error: ", error);
+  });
+})
+
+//PUT /api/exercises/:id
+
+
+//DELETE /api/exercises/:id
+
 
 module.exports = router;
