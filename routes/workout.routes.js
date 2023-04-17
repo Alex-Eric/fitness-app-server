@@ -27,13 +27,20 @@ router.put("/workouts/:id/edit",(req,res,next)=>{
     const {name, series, description} = req.body
     const workoutData = {name, series ,description}
     Workout.findByIdAndUpdate(req.params.id,workoutData)
-    .then((response)=>{
-        res.json("updated!")
+    .then(()=>{
+        res.json("Updated!")
     })
     .catch(err=>console.log("Error: " , err))
 })
 
+router.delete("/workouts/:id",(req,res,next)=>{
 
+    Workout.findByIdAndDelete(req.params.id)
+    .then(()=>{
+        res.json("Deleted!")
+    })
+    .catch(err=>console.log("Error: " , err))
+})
 
 module.exports = router;
 
