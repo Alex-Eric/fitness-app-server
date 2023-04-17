@@ -4,7 +4,7 @@ const router = express.Router();
 
 // GET /api/muscles
 router.get("/muscles",(req,res,next)=>{
-    Muscle.find()
+  Muscle.find()
     .then((response)=>{
         res.json(response)
     })
