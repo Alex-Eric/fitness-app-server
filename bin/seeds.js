@@ -5,7 +5,7 @@ const request = require("request");
 const axios = require("axios");
 
 const MONGO_URI =
-  /* process.env.MONGODB_URI ||*/ "mongodb://127.0.0.1:27017/fitness-app-server";
+   process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/fitness-app-server";
 
 const muscles = [
   {
