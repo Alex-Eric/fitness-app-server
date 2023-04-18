@@ -17,15 +17,8 @@ const exerciseSchema = new Schema(
             type: String,
             required: [true, "The description is required"]
         },
-
-        video: {
-            type: String,
-            // required: [true, "The video is required"]
-        },
-
         muscle: {
-            type: Schema.Types.ObjectId,
-            ref: "Muscle"
+            type: String
         },
 
         owner: {

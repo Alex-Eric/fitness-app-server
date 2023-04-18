@@ -97,6 +97,8 @@ Promise.all(exercisesPromises)
       name: element.name,
       type: element.type,
       description: element.instructions,
+      muscle: element.muscle,
+      owner: "643ee0cad41a596744807919"
     };
   });
 
