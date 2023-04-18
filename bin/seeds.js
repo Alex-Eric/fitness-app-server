@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 const Muscles = require("../models/Muscle.model");
 const Exercises = require("../models/Exercise.model");
-const request = require("request");
 const axios = require("axios");
 
-const MONGO_URI =
-   process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/fitness-app-server";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/fitness-app-server";
 
 const muscles = [
   {
@@ -82,7 +81,7 @@ const exercisesPromises = muscles.map((muscle) => {
       headers: {
         "X-Api-Key":
           process.env.API_NINJA_KEY_SECRET ||
-          "SESp/8Nz4NWIYG6FDDerNA==RD1ZbMZltIomlxMU",
+          "SESp/8Nz4NWIYG6FDDerNA==RD1ZbMZltIomlxMU"
       },
     })
     .then((responseFromAPI) => {
@@ -103,6 +102,7 @@ Promise.all(exercisesPromises)
   });
 
   mongoose.connect(MONGO_URI).then((x) => {
+    console.log(process.env.PORT)
     console.log(
       `Connected to Mongo to Insert Collections!! Database name: "${x.connections[0].name}"`
     );
