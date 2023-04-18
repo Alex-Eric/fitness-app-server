@@ -86,7 +86,7 @@ const exercisesPromises = muscles.map((muscle) => {
       },
     })
     .then((responseFromAPI) => {
-      return exercises.push(responseFromAPI.data);
+      exercises.push(responseFromAPI.data);
     });
 });
 
@@ -108,8 +108,15 @@ Promise.all(exercisesPromises)
     );
   });
   const seedDB = async () => {
-    await Muscles.insertMany(muscles);
-    await Exercises.insertMany(exercisesToBD);
+    await Muscles.deleteMany({})
+    await Muscles.insertMany(muscles, { ordered: false })
+    for (const exercise of exercisesToBD) {
+      await Exercises.updateOne(
+        { name: exercise.name },
+        { $set: exercise },
+        { upsert: true }
+      );
+    }
   };
   seedDB().then(() => {
     console.log(`Created ${muscles.length} muscles`);
