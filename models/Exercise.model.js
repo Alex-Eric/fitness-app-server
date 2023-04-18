@@ -3,7 +3,8 @@ const exerciseSchema = new Schema(
     {
         name: {
             type: String,
-            required: [true, "The name is required"]
+            required: [true, "The name is required"],
+            unique: true
         },
         
         type: {

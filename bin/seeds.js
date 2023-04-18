@@ -106,9 +106,7 @@ Promise.all(exercisesPromises)
     );
   });
   const seedDB = async () => {
-    await Muscles.deleteMany({});
     await Muscles.insertMany(muscles);
-    await Exercises.deleteMany({});
     await Exercises.insertMany(exercisesToBD);
   };
   seedDB().then(() => {

@@ -4,7 +4,7 @@ const muscleSchema = new Schema(
         name: {
             type: String,
             required: [true, "The name is required"],
-            // unique: true
+            unique: true
         },
         photo: {
             type: String,
