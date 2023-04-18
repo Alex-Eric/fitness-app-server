@@ -10,67 +10,67 @@ const MONGO_URI =
 const muscles = [
   {
     name: "abdominals",
-    photo: "Photo",
+    photo: "abs",
   },
   {
     name: "abductors",
-    photo: "Photo",
+    photo: "abductors",
   },
   {
     name: "adductors",
-    photo: "Photo",
+    photo: "adductors",
   },
   {
     name: "biceps",
-    photo: "Photo",
+    photo: "biceps",
   },
   {
     name: "calves",
-    photo: "Photo",
+    photo: "calfs",
   },
   {
     name: "chest",
-    photo: "Photo",
+    photo: "chest",
   },
   {
     name: "forearms",
-    photo: "Photo",
+    photo: "forearms",
   },
   {
     name: "glutes",
-    photo: "Photo",
+    photo: "gluteus",
   },
   {
     name: "hamstrings",
-    photo: "Photo",
+    photo: "hamstring",
   },
   {
     name: "lats",
-    photo: "Photo",
+    photo: "latissimus",
   },
   {
     name: "lower_back",
-    photo: "Photo",
+    photo: "back_lower",
   },
   {
     name: "middle_back",
-    photo: "Photo",
+    photo: "back",
   },
   {
     name: "neck",
-    photo: "Photo",
+    photo: "neck",
   },
   {
     name: "quadriceps",
-    photo: "Photo",
+    photo: "quadriceps",
   },
   {
     name: "traps",
-    photo: "Photo",
+    photo: "back_upper",
   },
   {
     name: "triceps",
-    photo: "Photo",
+    photo: "triceps",
   },
 ];
 
