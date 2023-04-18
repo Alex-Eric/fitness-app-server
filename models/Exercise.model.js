@@ -12,7 +12,7 @@ const exerciseSchema = new Schema(
             required: [true, "The type is required"],
             enum: ["cardio","olympic_weightlifting","plyometrics","powerlifting","strength","stretching","strongman"]
         },
-
+ 
         description: {
             type: String,
             required: [true, "The description is required"]
