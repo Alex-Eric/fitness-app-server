@@ -13,6 +13,7 @@ const User = require("../models/User.model");
 
 // Require necessary (isAuthenticated) middleware in order to control access to specific routes
 const { isAuthenticated } = require("../middleware/jwt.middleware.js");
+const { response } = require("../app");
 
 // How many rounds should bcrypt run the salt (default - 10 rounds)
 const saltRounds = 10;
@@ -128,5 +129,13 @@ router.get("/verify", isAuthenticated, (req, res, next) => {
   // Send back the token payload object containing the user data
   res.status(200).json(req.payload);
 });
+
+//GET /auth/users
+
+router.get("/users" ,(req,res,next)=>{
+  User.find()
+  .then(response=>res.status(200).json(response))
+  .catch(err=>console.log("Error: ",err))
+})
 
 module.exports = router;
