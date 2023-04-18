@@ -18,7 +18,8 @@ const exerciseSchema = new Schema(
             required: [true, "The description is required"]
         },
         muscle: {
-            type: String
+            type: String,
+            required: true
         },
 
         owner: {
