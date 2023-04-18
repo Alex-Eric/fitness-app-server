@@ -23,7 +23,7 @@ const muscles = [
   {
     name: "biceps",
     photo: "biceps",
-  },
+  }, 
   {
     name: "calves",
     photo: "calfs",
