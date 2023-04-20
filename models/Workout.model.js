@@ -12,6 +12,9 @@ const workoutSchema = new Schema(
         series:{
             type: Number
         },
+        reps:{
+            type: Number
+        },
         description:{
             type: String
         },
