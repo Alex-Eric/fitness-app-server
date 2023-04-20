@@ -16,7 +16,7 @@ router.post("/workouts/create", (req,res,next)=>{
     const {name, series, description, exercises, owner} = req.body
     const workoutData = {name, series ,description, exercises, owner}
     Workout.create(workoutData)
-    .then(response=>{
+    .then(response=>{ 
     res.json("Created!")
     })
     .catch(err=>console.log("Error: " , err))
@@ -26,7 +26,7 @@ router.post("/workouts/create", (req,res,next)=>{
 router.put("/workouts/:id/edit",(req,res,next)=>{
     const {name, series, description, exercises} = req.body
     const workoutData = {name, series ,description, exercises}
-    Workout.findByIdAndUpdate(req.params.id,workoutData)
+    Workout.findByIdAndUpdate(req.params.id,workoutData) 
     .then(()=>{
         res.json("Updated!")
     })
