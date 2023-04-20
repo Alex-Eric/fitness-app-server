@@ -13,8 +13,8 @@ router.get("/workouts",(req,res,next)=>{
 
 // POST /api/workouts/create
 router.post("/workouts/create", (req,res,next)=>{
-    const {name, series, description} = req.body
-    const workoutData = {name, series ,description}
+    const {name, series, description, exercises, owner} = req.body
+    const workoutData = {name, series ,description, exercises, owner}
     Workout.create(workoutData)
     .then(response=>{
     res.json("Created!")
@@ -24,8 +24,8 @@ router.post("/workouts/create", (req,res,next)=>{
 
 //PUT /api/workouts/:id/edit
 router.put("/workouts/:id/edit",(req,res,next)=>{
-    const {name, series, description} = req.body
-    const workoutData = {name, series ,description}
+    const {name, series, description, exercises} = req.body
+    const workoutData = {name, series ,description, exercises}
     Workout.findByIdAndUpdate(req.params.id,workoutData)
     .then(()=>{
         res.json("Updated!")
