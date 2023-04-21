@@ -5,6 +5,12 @@ const Exercise = require("../models/Exercise.model");
 
 // GET /api/exercises
 router.get("/exercises", (req, res, next) => {
+  // const muscleFilter = req.querry.muscleFilter
+
+  // let filter = {}
+  // if (muscleFilter) {
+  //   filter = {muscle: {$eq: muscleFilter}}
+  // }
   Exercise.find()
     .then((response) => res.json(response))
     .catch((err) => console.log("Error: ", err));
@@ -24,15 +30,15 @@ router.post("/exercises/create", (req, res, next) => {
   Exercise.create({ name, type, description,muscle,owner })
     .then(() => res.status(201).json("Created!"))
     .catch((error) => {
-      console.log("error: ", error);
+      res.status(401).json({ message: "Name already exists" });
     });
 });
 
 //PUT /api/exercises/:id
 router.put("/exercises/:exerciseId", (req, res, next) => {
   const { exerciseId } = req.params;
-  const { name, type, description } = req.body;
-  Exercise.findByIdAndUpdate(exerciseId, { name, type, description })
+  const { name, type, description,muscle } = req.body;
+  Exercise.findByIdAndUpdate(exerciseId, { name, type, description,muscle })
     .then(() => res.status(200).json("Updated!"))
     .catch((error) => {
       console.log("error: ", error);
